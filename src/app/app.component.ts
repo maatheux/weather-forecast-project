@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetWeatherService } from './services/get-weather.service';
+import { GetWeatherService } from './shared/services/get-weather.service';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
     this.weatherService.getCityWeather('Rio de Janeiro').subscribe({
       next: res => this.weatherRes = res,
       error: error => console.error(error),
+      complete: () => console.log(this.weatherRes),
     })
   }
 
