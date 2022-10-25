@@ -19,6 +19,7 @@
     span {
       font-weight: 600;
       font-size: 0.8rem;
+      cursor: pointer;
 
       span {
         color: #3ECDE0;
@@ -27,22 +28,113 @@
 
   }
 
-}
+  .page-icons-container {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
-.left-bar::after {
-  content: "";
-  position: absolute;
-  top: 	0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
-  background: linear-gradient(
-    to bottom,
-    rgba(25, 27, 31, .35),
-    rgba(25, 27, 31, .3),
-    rgba(255, 198, 45, .02),
-    rgba(29, 111, 242, .02),
-    rgba(25, 27, 31, .5),
-  );
+    div {
+      margin-bottom: 2rem;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      padding: 0.5rem 0;
+
+      .pi {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .user-container {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 15%;
+    min-height: 120px;
+    max-height: 150px;
+
+    .user-alert {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      span {
+        display: block;
+        width: 40px !important;
+        height: 40px !important;
+        background-color: #191B1F;
+        border-radius: 50%;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        .circle-icon-alert {
+          display: block;
+          position: absolute;
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          z-index: 2;
+          background-color: #d80e0e;
+          left: 50%;
+        }
+
+        .pi {
+          font-size: 1.1rem;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .user-photo {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+
+      span {
+        display: block;
+        width: 50px !important;
+        height: 50px !important;
+        background-color: #191B1F;
+        border-radius: 50%;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        .pi {
+          font-size: 1.1rem;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 	0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(
+      to bottom,
+      rgba(25, 27, 31, .35),
+      rgba(25, 27, 31, .3),
+      rgba(255, 198, 45, .02),
+      rgba(29, 111, 242, .02),
+      rgba(25, 27, 31, .5),
+    );
+  }
+
 }

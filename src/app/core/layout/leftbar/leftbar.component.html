@@ -4,19 +4,24 @@
   </div>
   <div class="horizontal-line"></div>
   <div class="page-icons-container">
-    <p>main</p> <!-- pi-th-large -->
-    <p>maps</p> <!-- pi-map -->
-    <p>location</p> <!-- pi-map-marker -->
-    <p>metrics</p> <!-- pi-chart-bar -->
-    <p>calendar</p> <!-- pi-calendar -->
-    <p>settings</p> <!-- pi-cog -->
+    <div><i class="pi pi-th-large"></i></div> <!-- pi-th-large -->
+    <div><i class="pi pi-map"></i></div> <!-- pi-map -->
+    <div><i class="pi pi-map-marker"></i></div> <!-- pi-map-marker -->
+    <div><i class="pi pi-chart-bar"></i></div> <!-- pi-chart-bar -->
+    <div><i class="pi pi-calendar"></i></div> <!-- pi-calendar -->
+    <div><i class="pi pi-cog"></i></div> <!-- pi-cog -->
   </div>
   <div class="user-container">
     <div class="user-alert">
-      <span>bell icon</span>
+      <span>
+        <div *ngIf="false" class="circle-icon-alert"></div>
+        <i class="pi pi-bell"></i>
+      </span>
     </div>
     <div class="user-photo">
-      <span>photo</span>
+      <span>
+        <i class="pi pi-user"></i>
+      </span>
     </div>
   </div>
 </div>
