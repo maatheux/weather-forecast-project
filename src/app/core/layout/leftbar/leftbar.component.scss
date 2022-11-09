@@ -40,7 +40,18 @@
       width: 100%;
       text-align: center;
       cursor: pointer;
-      padding: 0.5rem 0;
+      padding: 1rem 0;
+      box-sizing: border-box;
+
+      &:hover {
+        border-left: 2.5px solid #fff;
+        background: linear-gradient(
+          to right,
+          rgba(228, 228, 228, 0.2),
+          transparent,
+        );
+        backdrop-filter: blur(100rem);
+      }
 
       .pi {
         font-size: 1.1rem;
