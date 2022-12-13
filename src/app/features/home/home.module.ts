@@ -4,6 +4,8 @@ import { CurrentWeatherComponent } from './components/current-weather/current-we
 import { WeatherHighlightsComponent } from './components/weather-highlights/weather-highlights.component';
 import { NextWeatherForecastComponent } from './components/next-weather-forecast/next-weather-forecast.component';
 import { WeatherMapComponent } from './components/weather-map/weather-map.component';
+import { ButtonModule } from 'primeng/button';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 
 
@@ -15,7 +17,9 @@ import { WeatherMapComponent } from './components/weather-map/weather-map.compon
     WeatherMapComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ButtonModule,
+    OverlayPanelModule,
   ],
   exports: [
     CurrentWeatherComponent,

@@ -1,3 +1,15 @@
 <div class="current-weather-container home-container">
-  <div class="current-weather-box box-container"></div>
+  <div class="current-weather-box box-container">
+    <div class="search-btn-box">
+      <button  pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-secondary" (click)="searchPanel.toggle($event)"></button>
+      <p-overlayPanel #searchPanel [dismissable]="true" [showCloseIcon]="true" [style]="{width: '275px'}">
+        <ng-template pTemplate>
+          <div class="p-inputgroup">
+            <input type="text" pInputText placeholder="Insert the city">
+            <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-primary"></button>
+          </div>
+        </ng-template>
+      </p-overlayPanel>
+    </div>
+  </div>
 </div>
