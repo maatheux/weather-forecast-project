@@ -1,15 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import {GetWeatherService} from "../../../../shared/services/get-weather.service";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-current-weather',
   templateUrl: './current-weather.component.html',
-  styleUrls: ['./current-weather.component.scss']
+  styleUrls: ['./current-weather.component.scss'],
+  providers: [MessageService],
 })
 export class CurrentWeatherComponent implements OnInit {
 
-  constructor() { }
+  public insertedCity: string = '';
+
+  public cityWeatherInfo: any;
+
+  constructor(private weatherService: GetWeatherService, private messageService: MessageService) { }
 
   ngOnInit(): void {
+  }
+
+  public GetCityWeather(element: any): void {
+    this.weatherService.getCityWeather(this.insertedCity).subscribe({
+      next: (res) => this.cityWeatherInfo = res,
+      error: () => {
+        this.messageService.add({severity: 'error', summary: 'City not found', detail: `We didn't find the city: ${this.insertedCity}`, life: 3000, key: 'tr'})
+      },
+      complete: () => {
+        element.hide();
+        this.insertedCity = '';
+      }
+    })
   }
 
 }

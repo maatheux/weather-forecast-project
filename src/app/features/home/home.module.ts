@@ -6,6 +6,10 @@ import { NextWeatherForecastComponent } from './components/next-weather-forecast
 import { WeatherMapComponent } from './components/weather-map/weather-map.component';
 import { ButtonModule } from 'primeng/button';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import {FormsModule} from "@angular/forms";
+import {ToastModule} from 'primeng/toast';
+import {RippleModule} from "primeng/ripple";
+import {InputTextModule} from "primeng/inputtext";
 
 
 
@@ -20,6 +24,10 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
     CommonModule,
     ButtonModule,
     OverlayPanelModule,
+    FormsModule,
+    ToastModule,
+    RippleModule,
+    InputTextModule,
   ],
   exports: [
     CurrentWeatherComponent,

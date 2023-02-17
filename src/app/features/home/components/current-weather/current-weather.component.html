@@ -1,15 +1,21 @@
+<p-toast position="top-right" key="tr"></p-toast>
+
 <div class="current-weather-container home-container">
   <div class="current-weather-box box-container">
     <div class="search-btn-box">
       <button  pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-secondary" (click)="searchPanel.toggle($event)"></button>
       <p-overlayPanel #searchPanel [dismissable]="true" [showCloseIcon]="true" [style]="{width: '275px'}">
-        <ng-template pTemplate>
+        <ng-template pTemplate="body">
           <div class="p-inputgroup">
-            <input type="text" pInputText placeholder="Insert the city">
-            <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-primary"></button>
+            <input type="text" pInputText placeholder="Insert the city" [(ngModel)]="insertedCity" (keyup.enter)="GetCityWeather(searchPanel)" required>
+            <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-primary" (click)="GetCityWeather(searchPanel)"></button>
           </div>
         </ng-template>
       </p-overlayPanel>
+    </div>
+
+    <div class="city-weather-info">
+      <p>{{ cityWeatherInfo | json }}</p>
     </div>
   </div>
 </div>
