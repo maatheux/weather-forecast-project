@@ -14,8 +14,24 @@
       </p-overlayPanel>
     </div>
 
-    <div class="city-weather-info">
-      <p>{{ cityWeatherInfo | json }}</p>
+    <div class="city-weather-info" *ngIf="cityWeatherInfo">
+      <div class="weather-info-icon">
+        <div class="weather-icon">
+          <img src='http://openweathermap.org/img/wn/{{cityWeatherInfo.weather[0].icon}}@2x.png' alt="{{cityWeatherInfo.weather[0].main}}">
+        </div>
+      </div>
+      <div class="temperature-info">
+        <span>{{temperatureValue}}</span>
+        <span>C</span>
+      </div>
+      <div class="weather-text-info">
+        <span>{{cityWeatherInfo.weather[0].description}}</span>
+      </div>
+      <div class="horizontal-line"></div>
+      <div class="city-text">
+        <span><i class="pi pi-map-marker"></i> {{cityWeatherInfo.name}}, {{cityWeatherInfo.sys.country}}</span>
+      </div>
+      <div class="datetime-info">{{datetimeValue}}</div>
     </div>
   </div>
 </div>

@@ -1,66 +1,83 @@
-.current-weather-container {
+:host {
+  .current-weather-container {
 
-  .current-weather-box {
+    .current-weather-box {
 
-    .search-btn-box {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      padding: 0.5rem;
+      .search-btn-box {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.5rem;
 
-      .p-button {
-        background: linear-gradient(
-          to bottom,
-          rgba(25, 27, 31, .35),
-          rgba(25, 27, 31, .3),
-          rgba(25, 27, 31, .5),
-        ) !important;
-        border: none !important;
-
-        &:hover {
+        .p-button {
           background: linear-gradient(
-          to bottom,
-          rgba(12, 13, 15, 0.35),
-          rgba(12, 13, 15, .3),
-          rgba(12, 13, 15, .5),
-        ) !important;
+              to bottom,
+              rgba(25, 27, 31, .35),
+              rgba(25, 27, 31, .3),
+              rgba(25, 27, 31, .5)
+          ) !important;
+          border: none !important;
+
+          &:hover {
+            background: linear-gradient(
+                to bottom,
+                rgba(12, 13, 15, 0.35),
+                rgba(12, 13, 15, .3),
+                rgba(12, 13, 15, .5)
+            ) !important;
+          }
+        }
+
+
+
+      }
+
+      .city-weather-info {
+        width: 100%;
+
+        .weather-info-icon {
+          width: 100%;
+
+          .weather-icon {
+
+            img {
+              width: 25%;
+            }
+          }
         }
       }
 
-
-
     }
+
+
+
+    /* &::after {
+      content: "";
+      position: relative;
+      top: 	0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      background: linear-gradient(
+        to bottom,
+        rgba(25, 27, 31, .35),
+        rgba(25, 27, 31, .3),
+        rgba(255, 198, 45, .02),
+        rgba(29, 111, 242, .02),
+        rgba(25, 27, 31, .5),
+      );
+    } */
 
   }
 
-
-
-  /* &::after {
-    content: "";
-    position: relative;
-    top: 	0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    border-radius: 6px;
-    background: linear-gradient(
-      to bottom,
-      rgba(25, 27, 31, .35),
-      rgba(25, 27, 31, .3),
-      rgba(255, 198, 45, .02),
-      rgba(29, 111, 242, .02),
-      rgba(25, 27, 31, .5),
-    );
-  } */
-
-}
-
-.p-inputgroup{
-  input {
-    border: 0.5px solid rgba(12, 13, 15, .2) !important;
-    outline: none;
-    padding: 0.4rem !important;
+  .p-inputgroup{
+    input {
+      border: 0.5px solid rgba(12, 13, 15, .2) !important;
+      outline: none;
+      padding: 0.4rem !important;
+    }
   }
 }
 
