@@ -14,9 +14,13 @@
       </p-overlayPanel>
     </div>
 
+    <div class="empty-city-weather-info" *ngIf="!cityWeatherInfo">
+      <p>Please select a city on the search button</p>
+    </div>
+
     <div class="city-weather-info" *ngIf="cityWeatherInfo">
       <div class="weather-info-icon">
-        <div class="weather-icon">
+        <div class="weather-icon" pTooltip="{{cityWeatherInfo.weather[0].main}}">
           <img src='http://openweathermap.org/img/wn/{{cityWeatherInfo.weather[0].icon}}@2x.png' alt="{{cityWeatherInfo.weather[0].main}}">
         </div>
       </div>
@@ -25,7 +29,7 @@
         <span>C</span>
       </div>
       <div class="weather-text-info">
-        <span>{{cityWeatherInfo.weather[0].description}}</span>
+        <span>{{weatherDescription}}</span>
       </div>
       <div class="horizontal-line"></div>
       <div class="city-text">

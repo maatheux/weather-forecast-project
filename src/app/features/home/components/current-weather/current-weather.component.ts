@@ -17,6 +17,7 @@ export class CurrentWeatherComponent implements OnInit {
 
   public temperatureValue?: string;
   public datetimeValue?: string;
+  public weatherDescription?: string;
 
   constructor(private weatherService: GetWeatherService, private messageService: MessageService) { }
 
@@ -29,6 +30,10 @@ export class CurrentWeatherComponent implements OnInit {
         this.cityWeatherInfo = res;
         this.temperatureValue = `${Math.round(this.cityWeatherInfo.main.temp)}º`
         this.datetimeValue = `${new Date().toDateString()} ${new Date().toLocaleTimeString()}`;
+        this.weatherDescription = this.cityWeatherInfo.weather[0].description.split(" ").map(word => {
+          word = word[0].toUpperCase() + word.slice(1, word.length);
+          return word;
+        }).join(" ");
       },
       error: () => {
         this.messageService.add({severity: 'error', summary: 'City not found', detail: `We didn't find the city: ${this.insertedCity}`, life: 3000, key: 'tr'})

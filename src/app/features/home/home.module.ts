@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {ToastModule} from 'primeng/toast';
 import {RippleModule} from "primeng/ripple";
 import {InputTextModule} from "primeng/inputtext";
+import {TooltipModule} from "primeng/tooltip";
 
 
 
@@ -28,6 +29,7 @@ import {InputTextModule} from "primeng/inputtext";
     ToastModule,
     RippleModule,
     InputTextModule,
+    TooltipModule,
   ],
   exports: [
     CurrentWeatherComponent,
