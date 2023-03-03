@@ -22,6 +22,9 @@ export class CurrentWeatherComponent implements OnInit {
   constructor(private weatherService: GetWeatherService, private messageService: MessageService) { }
 
   ngOnInit(): void {
+    // const d = new Date(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate(), new Date().getUTCHours(), new Date().getUTCMinutes(), new Date().getUTCSeconds());
+    // d.setUTCSeconds(32400);
+    // console.log(d.toLocaleTimeString('en-US', {timeStyle: 'short'}))
   }
 
   public GetCityWeather(element: any): void {
@@ -29,7 +32,11 @@ export class CurrentWeatherComponent implements OnInit {
       next: (res: CityWeatherInfo) => {
         this.cityWeatherInfo = res;
         this.temperatureValue = `${Math.round(this.cityWeatherInfo.main.temp)}º`
-        this.datetimeValue = `${new Date().toDateString()} ${new Date().toLocaleTimeString()}`;
+
+        const d = new Date(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate(), new Date().getUTCHours(), new Date().getUTCMinutes(), new Date().getUTCSeconds());
+        d.setUTCSeconds(res.timezone);
+        this.datetimeValue = `${d.toLocaleString('en-US',{timeStyle: 'short', dateStyle: 'full'})}`;
+
         this.weatherDescription = this.cityWeatherInfo.weather[0].description.split(" ").map(word => {
           word = word[0].toUpperCase() + word.slice(1, word.length);
           return word;
